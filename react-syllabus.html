@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React 37-Session Curriculum & Lab Syllabus (Interactive Table) | Frontend Journey</title>
+  <meta name="description" content="Full 37-session day-wise React course syllabus, topic breakdowns, lab assignments, and practical learning outcomes table.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Custom Bubbly Light Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .raw-card-container {
+      background-color: #ffffff;
+      border: 2px solid #e2e8f0;
+      border-radius: 1.5rem;
+      padding: 2rem;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    }
+    .raw-text-content {
+      background-color: #ffffff;
+      color: #0f172a;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.95rem;
+      line-height: 1.75;
+      white-space: pre-wrap;
+      word-break: break-word;
+      border: none;
+      margin: 0;
+      padding: 0;
+    }
+    .table-syllabus th {
+      background-color: #4f46e5;
+      color: #ffffff;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Base64 Raw text script data container (Guarantees 100% untouched byte-for-byte fidelity) -->
+  <script id="raw-data-base64" type="text/plain">77u/U2Vzc2lvbixUb3BpY3MsRGF5LXdpc2UgTGFiIEFzc2lnbm1lbnQsV2hhdCBjYW4gYmUgZG9uZSBhZnRlciB0aGlzIHRvcGljLAoxLCJTb2Z0d2FyZSBTZXR1cCwgV2ViIEludHJvIixJbnN0YWxsIE5vZGUgJiBWUyBDb2RlIOKGkiBjcmVhdGUgaW5kZXguaHRtbCB3aXRoIExpdmUgU2VydmVyLEV4cGxhaW4gY2xpZW504oCTc2VydmVyIG1vZGVsIGFuZCBicm93c2VyIHdvcmtmbG93LAoyLCJKYXZhU2NyaXB0IEJhc2ljcywgVmFyaWFibGVzIixQcm9ncmFtcyB1c2luZyB2YXIvbGV0L2NvbnN0ICsgdHlwZW9mICsgc2NvcGUgZGVtbyxXcml0ZSBjbGVhbiBtb2Rlcm4gSmF2YVNjcmlwdCwKMyxGdW5jdGlvbnMsQ2FsY3VsYXRvciBmdW5jdGlvbixXcml0ZSByZXVzYWJsZSBhbmQgZnVuY3Rpb25hbCBKUywKNCxBcnJheXMsIm1hcCwgZmlsdGVyLCByZWR1Y2Ugb24gdXNlcnMvcHJvZHVjdHMgSlNPTiIsUHJvY2VzcyByZWFsLXdvcmxkIGRhdGEsCjUsT2JqZWN0cyAmIE9PUCwiQ3JlYXRlIFVzZXIgY2xhc3MsIEFkbWluIGV4dGVuZHMgVXNlciwgc2hvdyBzaGFsbG93IHZzIGRlZXAgY29weSIsV3JpdGUgb2JqZWN0LW9yaWVudGVkIEpTLAo2LEVTLTYgRmVhdHVyZXMsIlJlZmFjdG9yIGNvZGUgdXNpbmcgZGVzdHJ1Y3R1cmluZywgcmVzdCwgc3ByZWFkIixVc2UgbW9kZXJuIEphdmFTY3JpcHQgc3ludGF4LAo3LEFzeW5jIEphdmFTY3JpcHQsQ2FsbCBwdWJsaWMgQVBJIHVzaW5nIGZldGNoICsgYXN5bmMvYXdhaXQsSGFuZGxlIGFzeW5jIG9wZXJhdGlvbnMgY29ycmVjdGx5LAo4LENyZWF0ZSBGaXJzdCBSZWFjdCBBcHAsIkNyZWF0ZSBhcHAgdXNpbmcgVml0ZSwgZXhwbGFpbiBmb2xkZXIgc3RydWN0dXJlIixSdW4gYW5kIG1hbmFnZSBSZWFjdCBwcm9qZWN0cywKOSxKU1gsQnVpbGQgSlNYIFVJIHdpdGggZXhwcmVzc2lvbnMgYW5kIGZyYWdtZW50cyxXcml0ZSBhbmQgdW5kZXJzdGFuZCBKU1gsCjEwLENvbXBvbmVudHMsIkNyZWF0ZSBIZWFkZXIsIEZvb3RlciwgQ2FyZCBjb21wb25lbnRzIixCdWlsZCByZXVzYWJsZSBVSSBjb21wb25lbnRzLAoxMSxDb21wb25lbnQgU3R5bGluZyxTdHlsZSBkYXNoYm9hcmQgdXNpbmcgQ1NTIE1vZHVsZXMsQ3JlYXRlIHByb2R1Y3Rpb24tcmVhZHkgVUksCjEyLFByb3BzLEJ1aWxkIHJldXNhYmxlIFByb2R1Y3RDYXJkIHdpdGggcHJvcHMgKyBQcm9wVHlwZXMsU2hhcmUgZGF0YSBzYWZlbHkgYmV0d2VlbiBjb21wb25lbnRzLAoxMyxTdGF0ZSAodXNlU3RhdGUpLENvdW50ZXIgKyBUaGVtZSB0b2dnbGUgYXBwLE1hbmFnZSBsb2NhbCBjb21wb25lbnQgc3RhdGUsCjE0LENvbmRpdGlvbmFsIFJlbmRlcmluZyxTaG93IExvZ2luL0xvZ291dCBVSSBiYXNlZCBvbiBzdGF0ZSxCdWlsZCBhZGFwdGl2ZSBVSSwKMTUsTGlzdHMgJiBLZXlzLFJlbmRlciBwcm9kdWN0IGxpc3QgZnJvbSBBUEkgd2l0aCBrZXlzLEJ1aWxkIHNjYWxhYmxlIGR5bmFtaWMgbGlzdHMsCjE2LEV2ZW50cyxJbnRlcmFjdGl2ZSBmb3JtIHdpdGggYnV0dG9uIGV2ZW50cyxIYW5kbGUgdXNlciBpbnRlcmFjdGlvbnMsCjE3LHVzZUVmZmVjdCxGZXRjaCB1c2VycyBmcm9tIEFQSSBhbmQgZGlzcGxheSBpbiB0YWJsZSxDb250cm9sIHNpZGUgZWZmZWN0cyBpbiBSZWFjdCwKMTgsQ3VzdG9tIEhvb2tzLENyZWF0ZSB1c2VGZXRjaCh1cmwpIGhvb2ssUmV1c2UgbG9naWMgYWNyb3NzIGNvbXBvbmVudHMsCjE5LFJlYWN0Lm1lbW8sT3B0aW1pemUgY2hpbGQgY29tcG9uZW50IHJlbmRlcnMsUmVkdWNlIHVubmVjZXNzYXJ5IHJlLXJlbmRlcnMsCjIwLHVzZU1lbW8gLyB1c2VDYWxsYmFjayxPcHRpbWl6ZSBleHBlbnNpdmUgY2FsY3VsYXRpb25zLEltcHJvdmUgcGVyZm9ybWFuY2UsCjIxLEFkdmFuY2VkIEhvb2tzLCJJbXBsZW1lbnQgdXNlUmVkdWNlciwgdXNlUmVmLCB1c2VMYXlvdXRFZmZlY3QiLEhhbmRsZSBjb21wbGV4IHN0YXRlIGFuZCBsYXlvdXQtc2Vuc2l0aXZlIFVJLAoyMixGb3JtcyxCdWlsZCBjb250cm9sbGVkIHJlZ2lzdHJhdGlvbiBmb3JtLEhhbmRsZSB1c2VyIGlucHV0IHByb3Blcmx5LAoyMyxGb3JtIFZhbGlkYXRpb24sIkFkZCBlbWFpbCwgcGFzc3dvcmQsIHJlcXVpcmVkIHZhbGlkYXRpb24iLEJ1aWxkIHJvYnVzdCBmb3JtcywKMjQsSFRUUCDigJMgQXhpb3MsR0VUL1BPU1QgdXNpbmcgQXhpb3MsV29yayB3aXRoIGJhY2tlbmQgQVBJcywKMjUsQXhpb3MgSW50ZXJjZXB0b3JzLEFkZCBKV1QgdG9rZW4gaW4gcmVxdWVzdCBpbnRlcmNlcHRvcixIYW5kbGUgYXV0aGVudGljYXRpb24gY2VudHJhbGx5LAoyNixDb250ZXh0IEFQSSxJbXBsZW1lbnQgVGhlbWVDb250ZXh0IChMaWdodC9EYXJrKSxBdm9pZCBwcm9wIGRyaWxsaW5nLAoyNyxSb3V0aW5nIOKAkyBCYXNpYywiU2V0dXAgQnJvd3NlclJvdXRlciwgUm91dGVzLCBMaW5rIixCdWlsZCBtdWx0aS1wYWdlIFNQQSwKMjgsUm91dGluZyDigJMgQWR2YW5jZWQgKyBFcnJvciBCb3VuZGFyaWVzLCJSb3V0ZSBwYXJhbXMsIG5lc3RlZCByb3V0ZXMsIHByaXZhdGUgcm91dGVzICsgRXJyb3JCb3VuZGFyeSIsU2VjdXJlIG5hdmlnYXRpb24gYW5kIHByZXZlbnQgYXBwIGNyYXNoZXMsCjI5LExhenkgTG9hZGluZyxSZWFjdC5sYXp5ICsgU3VzcGVuc2UgZm9yIHBhZ2VzLEltcHJvdmUgYXBwIGxvYWQgdGltZSwKMzAsU3RhdGUgTWFuYWdlbWVudCAoSW50cm8pLFNpbXBsZSBnbG9iYWwgc3RvcmUgKFJlZHV4L1p1c3RhbmQpLE1hbmFnZSBzaGFyZWQgc3RhdGUsCjMxLFJlZHV4IFRvb2xraXQsQ1JVRCB1c2luZyBjcmVhdGVTbGljZSAmIGNvbmZpZ3VyZVN0b3JlLEJ1aWxkIHNjYWxhYmxlIHN0YXRlIGxvZ2ljLAozMixNYXRlcmlhbCBVSSwiQnVpbGQgZGFzaGJvYXJkIHVzaW5nIE1VSSBUYWJsZSwgQnV0dG9ucywgRGlhbG9nIixDcmVhdGUgcHJvZmVzc2lvbmFsIFVJLAozMyxSZWFjdCAxOCBGZWF0dXJlcywiRGVtbzogc3RhcnRUcmFuc2l0aW9uLCB1c2VUcmFuc2l0aW9uLCBhdXRvbWF0aWMgYmF0Y2hpbmciLFdyaXRlIG1vZGVybiBjb25jdXJyZW50IFJlYWN0LAozNCxQZXJmb3JtYW5jZSBNZWFzdXJlbWVudCAoUHJvZmlsZXIpLFVzZSBSZWFjdCBQcm9maWxlciB0byBpZGVudGlmeSBzbG93IGNvbXBvbmVudHMsRGlhZ25vc2UgYW5kIGZpeCBwZXJmb3JtYW5jZSBpc3N1ZXMsCjM1LFVuaXQgVGVzdGluZyxKZXN0ICsgUmVhY3QgVGVzdGluZyBMaWJyYXJ5IChjb21wb25lbnQgYW5kIGhvb2sgdGVzdHMpLEVuc3VyZSBjb2RlIHF1YWxpdHksCjM2LERlcGxveW1lbnQsQnVpbGQgYXBwIGFuZCBkZXBsb3kgdG8gVmVyY2VsL05ldGxpZnksSG9zdCBwcm9kdWN0aW9uLXJlYWR5IGFwcCwKMzcsTWluaSBQcm9qZWN0LEZ1bGwgQ1JVRCBhcHAgd2l0aCBBdXRoICsgUm91dGluZyArIFJlZHV4ICsgTVVJLEJ1aWxkIGFuZCBkZXBsb3kgcmVhbC13b3JsZCBhcHAs</script>
+
+  <!-- Cool Sleek Non-Repetitive Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-extrabold text-dark d-flex align-items-center gap-2" href="index.html">
+        <span class="bubble-pill bubble-primary shadow-sm">⚡ DevJourney</span>
+        <span class="fs-6 text-muted fw-bold d-none d-sm-inline">Frontend Hub</span>
+      </a>
+      
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link px-3" href="index.html#overview">🏠 Home</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="index.html#roadmap">🗺️ Roadmap</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="index.html#projects">💻 Projects</a></li>
+          
+          <!-- Single Clean Categorized Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle px-3 active fw-bold" href="#" role="button" data-bs-toggle="dropdown">
+              📚 Study Guides &amp; Resources
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg rounded-4 p-3 mt-2" style="min-width: 280px;">
+              <li><h6 class="dropdown-header text-uppercase text-primary fw-extrabold px-2 mb-1" style="font-size: 0.75rem; letter-spacing: 0.05em;">Core Notes &amp; Code</h6></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-2 fw-semibold" href="javascript-notes.html">⚡ JavaScript Notes</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-2 fw-semibold" href="react-notes.html">⚛️ React.js Complete Notes</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-2 fw-semibold" href="react-programs.html">💻 React Programs &amp; Examples</a></li>
+              
+              <li><hr class="dropdown-divider my-2"></li>
+              
+              <li><h6 class="dropdown-header text-uppercase text-purple fw-extrabold px-2 mb-1" style="font-size: 0.75rem; letter-spacing: 0.05em;">Syllabus &amp; Interviews</h6></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-2 fw-semibold active" href="react-syllabus.html">📅 37-Session Syllabus</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-2 fw-semibold" href="react-interview-questions-notes.html">❓ React Q&amp;A Notes</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-2 fw-semibold" href="react-interview.html">📘 Top 50 React Interview Guide</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-2 fw-semibold" href="javascript-interview.html">📙 Top 180 JS Interview Guide</a></li>
+            </ul>
+          </li>
+        </ul>
+        
+        <div class="ms-lg-3 mt-3 mt-lg-0">
+          <a href="index.html#resources" class="btn btn-bubbly-primary btn-sm px-4 py-2 shadow-sm">
+            🚀 All Guides
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="py-5 bg-white border-bottom">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-9 mx-auto text-center">
+          <span class="bubble-pill bubble-purple mb-3">37-Session Interactive Syllabus</span>
+          <h1 class="display-5 fw-extrabold text-dark mb-3">React 37-Session Curriculum & Lab Syllabus (Interactive Table)</h1>
+          <p class="lead text-muted mb-4">Full 37-session day-wise React course syllabus, topic breakdowns, lab assignments, and practical learning outcomes table.</p>
+          
+          <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 max-w-lg mx-auto">
+            <input type="text" id="resourceSearchInput" class="form-control form-control-bubbly py-3 px-4 shadow-sm" placeholder="Search keywords or code lines...">
+            <button id="copyBtn" class="btn btn-bubbly-secondary px-4 fw-bold text-nowrap">
+              📋 Copy Raw Text
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-11 mx-auto">
+          <div class="raw-card-container">
+            <div id="resource-container">
+              <div class="text-center py-5">
+                <div class="spinner-border text-primary" role="status"></div>
+                <p class="mt-2 text-muted fw-semibold">Loading 100% raw untouched text content...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-4 border-top bg-white">
+    <div class="container text-center">
+      <p class="text-muted mb-2">100% Raw Untouched White Background Study Documentation.</p>
+      <div class="d-flex justify-content-center flex-wrap gap-3 text-muted fw-semibold">
+        <a href="index.html" class="text-muted text-decoration-none">Home Roadmap</a> &bull; 
+        <a href="javascript-notes.html" class="text-muted text-decoration-none">JS Notes</a> &bull; 
+        <a href="react-notes.html" class="text-muted text-decoration-none">React Notes</a> &bull; 
+        <a href="react-programs.html" class="text-muted text-decoration-none">React Programs</a> &bull; 
+        <a href="react-syllabus.html" class="text-muted text-decoration-none">Syllabus</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const IS_SYLLABUS = true;
+
+    function decodeBase64Utf8(b64) {
+      try {
+        const binStr = atob(b64.trim());
+        const bytes = Uint8Array.from(binStr, c => c.charCodeAt(0));
+        return new TextDecoder('utf-8').decode(bytes);
+      } catch (e) {
+        return atob(b64);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const b64Script = document.getElementById('raw-data-base64');
+      const RAW_TEXT = b64Script ? decodeBase64Utf8(b64Script.textContent) : '';
+      const container = document.getElementById('resource-container');
+      const copyBtn = document.getElementById('copyBtn');
+
+      if (IS_SYLLABUS) {
+        // Render 37-Session Syllabus Interactive Table
+        let lines = RAW_TEXT.split(/\r?\n/).filter(l => l.trim());
+        let html = '<div class="table-responsive"><table class="table table-bordered table-striped align-middle table-syllabus rounded-4 overflow-hidden mb-0"><thead><tr>';
+        
+        let headers = lines[0].split(',').map(h => h.replace(/^"|"$/g, '').trim());
+        headers.forEach(h => {
+          html += `<th>${escapeHtml(h)}</th>`;
+        });
+        html += '</tr></thead><tbody>';
+
+        for (let i = 1; i < lines.length; i++) {
+          let rowStr = lines[i];
+          let cells = [];
+          let insideQuote = false;
+          let currentCell = '';
+          for (let char of rowStr) {
+            if (char === '"') {
+              insideQuote = !insideQuote;
+            } else if (char === ',' && !insideQuote) {
+              cells.push(currentCell.trim());
+              currentCell = '';
+            } else {
+              currentCell += char;
+            }
+          }
+          cells.push(currentCell.trim());
+
+          if (cells.length >= 2) {
+            html += '<tr class="syllabus-row">';
+            cells.forEach((c, idx) => {
+              let val = c.replace(/^"|"$/g, '');
+              if (idx === 0) {
+                html += `<td><span class="bubble-pill bubble-primary">Session ${escapeHtml(val)}</span></td>`;
+              } else if (idx === 1) {
+                html += `<td class="fw-bold text-dark">${escapeHtml(val)}</td>`;
+              } else {
+                html += `<td>${escapeHtml(val)}</td>`;
+              }
+            });
+            html += '</tr>';
+          }
+        }
+        html += '</tbody></table></div>';
+        container.innerHTML = html;
+      } else {
+        // Render 100% RAW UNTOUCHED TEXT (NO FORMATTING)
+        const preEl = document.createElement('pre');
+        preEl.className = 'raw-text-content';
+        preEl.textContent = RAW_TEXT;
+        container.innerHTML = '';
+        container.appendChild(preEl);
+      }
+
+      function escapeHtml(str) {
+        if (!str) return '';
+        return str
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#039;');
+      }
+
+      // Copy Button
+      if (copyBtn) {
+        copyBtn.addEventListener('click', () => {
+          navigator.clipboard.writeText(RAW_TEXT).then(() => {
+            copyBtn.textContent = '✅ Copied!';
+            setTimeout(() => { copyBtn.textContent = '📋 Copy Raw Text'; }, 2000);
+          }).catch(err => {
+            alert('Copy failed: ' + err);
+          });
+        });
+      }
+
+      // Live Search Filter
+      const searchInput = document.getElementById('resourceSearchInput');
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          const term = e.target.value.toLowerCase().trim();
+          if (IS_SYLLABUS) {
+            const rows = container.querySelectorAll('.syllabus-row');
+            rows.forEach(r => {
+              if (!term || r.textContent.toLowerCase().includes(term)) {
+                r.style.display = '';
+              } else {
+                r.style.display = 'none';
+              }
+            });
+          } else {
+            const preEl = container.querySelector('pre');
+            if (preEl) {
+              if (!term) {
+                preEl.textContent = RAW_TEXT;
+              } else {
+                let lines = RAW_TEXT.split('\n');
+                let matches = lines.filter(l => l.toLowerCase().includes(term));
+                preEl.textContent = `--- Found ${matches.length} matching lines out of ${lines.length} total lines ---\n\n` + matches.join('\n');
+              }
+            }
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

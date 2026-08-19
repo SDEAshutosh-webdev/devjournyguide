@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Realistic 2-Year Frontend Developer Roadmap &amp; Journey Guide</title>
+  <meta name="description"
+    content="A realistic, practical 2-year learning roadmap and documentation for new developers preparing for a career switch into Frontend Engineering.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom Bubbly Light Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Cool Sleek Non-Repetitive Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-extrabold text-dark d-flex align-items-center gap-2" href="index.html">
+        <span class="bubble-pill bubble-primary shadow-sm">⚡ DevJourney</span>
+        <span class="fs-6 text-muted fw-bold d-none d-sm-inline">Frontend Hub</span>
+      </a>
+      
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link px-3 active" href="index.html#overview">🏠 Home</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="index.html#roadmap">🗺️ Roadmap</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="index.html#projects">💻 Projects</a></li>
+          
+          <!-- Single Clean Categorized Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle px-3 fw-bold" href="#" role="button" data-bs-toggle="dropdown">
+              📚 Study Guides &amp; Resources
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg rounded-4 p-3 mt-2" style="min-width: 280px;">
+              <li><h6 class="dropdown-header text-uppercase text-primary fw-extrabold px-2 mb-1" style="font-size: 0.75rem; letter-spacing: 0.05em;">Core Notes &amp; Code</h6></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-2 fw-semibold" href="javascript-notes.html">⚡ JavaScript Notes</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-2 fw-semibold" href="react-notes.html">⚛️ React.js Complete Notes</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-2 fw-semibold" href="react-programs.html">💻 React Programs &amp; Examples</a></li>
+              
+              <li><hr class="dropdown-divider my-2"></li>
+              
+              <li><h6 class="dropdown-header text-uppercase text-purple fw-extrabold px-2 mb-1" style="font-size: 0.75rem; letter-spacing: 0.05em;">Syllabus &amp; Interviews</h6></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-2 fw-semibold" href="react-syllabus.html">📅 37-Session Syllabus</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-2 fw-semibold" href="react-interview-questions-notes.html">❓ React Q&amp;A Notes</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-2 fw-semibold" href="react-interview.html">📘 Top 50 React Interview Guide</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-2 fw-semibold" href="javascript-interview.html">📙 Top 180 JS Interview Guide</a></li>
+            </ul>
+          </li>
+        </ul>
+        
+        <div class="ms-lg-3 mt-3 mt-lg-0">
+          <a href="index.html#resources" class="btn btn-bubbly-primary btn-sm px-4 py-2 shadow-sm">
+            🚀 All Guides
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section with Friendly Smile & Motivating Quote Rotator -->
+  <section id="overview" class="py-5 bg-white border-bottom">
+    <div class="container py-4 text-center">
+      <div class="max-w-3xl mx-auto" style="max-width: 800px;">
+        <!-- Animated Bouncing Smile Icon -->
+        <div class="mb-3">
+          <span class="smile-animated-icon">😊</span>
+        </div>
+        
+        <!-- Friendly Greeting -->
+        <span class="bubble-pill bubble-primary mb-3">Hi Developer! 👋 Keep Smiling &amp; Coding</span>
+        <h1 class="display-4 fw-extrabold text-dark mb-3">
+          A Realistic <span class="text-primary">2-Year Frontend Journey</span> &amp; Guide
+        </h1>
+        <p class="lead text-muted mb-4">
+          No fluff, no 30-day shortcuts. An honest step-by-step documentation of what to learn and master.
+        </p>
+
+        <!-- Auto-Changing Motivating Quote Card in Hero -->
+        <div class="quote-box learn-box p-4 p-md-5 rounded-4 shadow-sm mx-auto mb-4 border" style="max-width: 720px;">
+          <div id="quoteContainer">
+            <blockquote id="quoteText" class="blockquote fs-4 fw-bold text-primary mb-2">
+              "The expert in anything was once a beginner."
+            </blockquote>
+            <figcaption id="quoteAuthor" class="blockquote-footer text-muted mb-0 fs-6">
+              Helen Hayes
+            </figcaption>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="d-flex justify-content-center flex-wrap gap-3 mb-4">
+          <a href="#roadmap" class="btn btn-bubbly-primary px-4 py-3 fs-6">
+            Explore 2-Year Roadmap ↓
+          </a>
+          <a href="#resources" class="btn btn-bubbly-secondary px-4 py-3 fs-6">
+            View All Study Pages (7 Guides)
+          </a>
+        </div>
+      </div>
+
+
+
+    </div>
+  </section>
+
+  <!-- Complete Study Resource Pages Section -->
+  <section id="resources" class="py-5 bg-white border-top border-bottom">
+    <div class="container">
+      <div class="text-center max-w-2xl mx-auto mb-5">
+        <span class="bubble-pill bubble-purple mb-2">Unabridged Knowledge Hub</span>
+        <h2 class="fw-bold text-dark">Dedicated Study &amp; Learning Resource Pages</h2>
+        <p class="text-muted">7 complete, unabridged study pages generated directly from comprehensive course notes and interview repos.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Resource 1: JS Notes -->
+        <div class="col-md-6 col-lg-4">
+          <div class="bubbly-card p-4 h-100 d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="bubble-pill bubble-sky">JavaScript</span>
+              <span class="small text-muted fw-bold">62 KB Notes</span>
+            </div>
+            <h4 class="fw-bold text-dark mb-2">JavaScript Complete Notes</h4>
+            <p class="small text-muted mb-3 flex-grow-1">Execution contexts, closures, scope chain, hoisting, strict mode, types, array methods, and event loop.</p>
+            <a href="javascript-notes.html" class="btn btn-bubbly-secondary text-center w-100">
+              Open JS Notes &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Resource 2: React Notes -->
+        <div class="col-md-6 col-lg-4">
+          <div class="bubbly-card p-4 h-100 d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="bubble-pill bubble-primary">React.js</span>
+              <span class="small text-muted fw-bold">109 KB Notes</span>
+            </div>
+            <h4 class="fw-bold text-dark mb-2">React.js Complete Notes</h4>
+            <p class="small text-muted mb-3 flex-grow-1">Virtual DOM, JSX, props vs state, hooks deep dive, Context API, Axios, Redux Toolkit, and performance.</p>
+            <a href="react-notes.html" class="btn btn-bubbly-secondary text-center w-100">
+              Open React Notes &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Resource 3: React Programs -->
+        <div class="col-md-6 col-lg-4">
+          <div class="bubbly-card p-4 h-100 d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="bubble-pill bubble-purple">Practical Code</span>
+              <span class="small text-muted fw-bold">118 KB Code</span>
+            </div>
+            <h4 class="fw-bold text-dark mb-2">React Programs &amp; Snippets</h4>
+            <p class="small text-muted mb-3 flex-grow-1">Practical code implementations, custom hook examples, form validation, state management, and API programs.</p>
+            <a href="react-programs.html" class="btn btn-bubbly-secondary text-center w-100">
+              Open React Programs &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Resource 4: React Interview Questions Notes -->
+        <div class="col-md-6 col-lg-4">
+          <div class="bubbly-card p-4 h-100 d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="bubble-pill bubble-coral">Interview Q&amp;A</span>
+              <span class="small text-muted fw-bold">17 KB Q&amp;As</span>
+            </div>
+            <h4 class="fw-bold text-dark mb-2">React Interview Questions Text</h4>
+            <p class="small text-muted mb-3 flex-grow-1">Targeted interview question &amp; answer notes on React rules, Hooks, lifecycle, and component patterns.</p>
+            <a href="react-interview-questions-notes.html" class="btn btn-bubbly-secondary text-center w-100">
+              Open React Q&amp;A Text &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Resource 5: 37-Session Syllabus -->
+        <div class="col-md-6 col-lg-4">
+          <div class="bubbly-card p-4 h-100 d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="bubble-pill bubble-success">Curriculum</span>
+              <span class="small text-muted fw-bold">37 Sessions</span>
+            </div>
+            <h4 class="fw-bold text-dark mb-2">37-Session React Syllabus</h4>
+            <p class="small text-muted mb-3 flex-grow-1">Complete day-wise React course syllabus, topic breakdowns, lab assignments, and practical outcomes table.</p>
+            <a href="react-syllabus.html" class="btn btn-bubbly-secondary text-center w-100">
+              Open 37-Session Syllabus &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Resource 6: Top React 2026 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="bubbly-card p-4 h-100 d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="bubble-pill bubble-primary">React 2026</span>
+              <span class="small text-muted fw-bold">Top 50 Q&amp;As</span>
+            </div>
+            <h4 class="fw-bold text-dark mb-2">Top React.js Interview Guide</h4>
+            <p class="small text-muted mb-3 flex-grow-1">50+ React questions with detailed answers, React 19 features, hooks, SSR, hydration, and reconciliation.</p>
+            <a href="react-interview.html" class="btn btn-bubbly-primary text-center w-100">
+              Open Top React Guide &rarr;
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: The Realistic 2-Year Roadmap -->
+  <section id="roadmap" class="py-5">
+    <div class="container">
+      <div class="text-center max-w-2xl mx-auto mb-5">
+        <span class="bubble-pill bubble-purple mb-2">Step-by-Step</span>
+        <h2 class="fw-bold text-dark">The Realistic 2-Year Frontend Roadmap</h2>
+        <p class="text-muted">What to learn, in what order, and common traps to avoid as a beginner.</p>
+
+        <div class="d-inline-flex gap-2 p-2 rounded-pill bg-light border mt-3">
+          <button class="btn btn-pill-custom active" data-filter="all">All Phases</button>
+          <button class="btn btn-pill-custom" data-filter="phase-1">Phase 1: Basics</button>
+          <button class="btn btn-pill-custom" data-filter="phase-2">Phase 2: React</button>
+          <button class="btn btn-pill-custom" data-filter="phase-3">Phase 3: TS &amp; Next</button>
+          <button class="btn btn-pill-custom" data-filter="phase-4">Phase 4: Job Switch</button>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="timeline-container">
+
+            <!-- Phase 1 -->
+            <div class="timeline-item phase-1">
+              <div class="timeline-dot"></div>
+              <div class="bubbly-card p-4">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <span class="bubble-pill bubble-sky">Months 1 – 5</span>
+                  <small class="text-muted fw-bold">Foundations First</small>
+                </div>
+                <h4 class="fw-bold text-dark mb-2">HTML5, CSS Layouts &amp; JavaScript Fundamentals</h4>
+                <p class="text-muted mb-3">Focus on building actual web pages with HTML and CSS (Flexbox &amp; Grid).
+                  Master JavaScript primitives, array methods (`map`, `filter`, `reduce`), DOM events, Promises, and
+                  `fetch()`.</p>
+
+                <div class="learn-box mb-3">
+                  <strong class="text-primary d-block mb-1">💡 What to Focus On:</strong>
+                  <span class="small text-muted">Building 3-4 simple static websites without any frameworks. Read the <a
+                      href="javascript-notes.html" class="fw-bold text-primary">Complete JS Notes</a> and study the <a
+                      href="javascript-interview.html" class="fw-bold text-primary">JavaScript Interview Guide</a>.</span>
+                </div>
+
+                <div class="apply-box">
+                  <strong class="text-danger d-block mb-1">⚠️ Common Trap to Avoid:</strong>
+                  <span class="small text-muted">Jumping straight into React before understanding how vanilla JavaScript
+                    works!</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="timeline-item phase-2">
+              <div class="timeline-dot"></div>
+              <div class="bubbly-card p-4">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <span class="bubble-pill bubble-primary">Months 6 – 11</span>
+                  <small class="text-muted fw-bold">React &amp; Modern Frontend</small>
+                </div>
+                <h4 class="fw-bold text-dark mb-2">React Basics, Hooks, State &amp; Consuming APIs</h4>
+                <p class="text-muted mb-3">Learn React component architecture, JSX syntax, `useState`, `useEffect`,
+                  custom hooks, form handling, Context API, and styling with Tailwind CSS or CSS Modules.</p>
+
+                <div class="learn-box mb-3">
+                  <strong class="text-primary d-block mb-1">💡 What to Focus On:</strong>
+                  <span class="small text-muted">Building a multi-page dashboard that fetches real external API data.
+                    Check out <a href="react-notes.html" class="fw-bold text-primary">React Notes</a>, <a
+                      href="react-programs.html" class="fw-bold text-primary">React Programs</a>, and the <a
+                      href="react-syllabus.html" class="fw-bold text-primary">37-Session Syllabus</a>.</span>
+                </div>
+
+                <div class="apply-box">
+                  <strong class="text-danger d-block mb-1">⚠️ Common Trap to Avoid:</strong>
+                  <span class="small text-muted">Tutorial Hell. Watching endless courses without building a project on
+                    your own from a blank screen.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="timeline-item phase-3">
+              <div class="timeline-dot"></div>
+              <div class="bubbly-card p-4">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <span class="bubble-pill bubble-purple">Months 12 – 17</span>
+                  <small class="text-muted fw-bold">Production Tools</small>
+                </div>
+                <h4 class="fw-bold text-dark mb-2">TypeScript, Next.js 14 &amp; Server State Management</h4>
+                <p class="text-muted mb-3">Learn TypeScript to write type-safe code. Understand Next.js App Router
+                  (Server vs Client Components), TanStack Query for server data fetching/caching, and Zustand for global
+                  UI state.</p>
+
+                <div class="learn-box mb-3">
+                  <strong class="text-primary d-block mb-1">💡 What to Focus On:</strong>
+                  <span class="small text-muted">Converting a JavaScript project to TypeScript. Building a Next.js app
+                    with dynamic routing, search filtering, and clean folder structure.</span>
+                </div>
+
+                <div class="apply-box">
+                  <strong class="text-danger d-block mb-1">⚠️ Common Trap to Avoid:</strong>
+                  <span class="small text-muted">Using `any` everywhere in TypeScript just to bypass type errors instead
+                    of defining proper types.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phase 4 -->
+            <div class="timeline-item phase-4">
+              <div class="timeline-dot"></div>
+              <div class="bubbly-card p-4">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <span class="bubble-pill bubble-success">Months 18 – 24</span>
+                  <small class="text-muted fw-bold">Job Switch Preparation</small>
+                </div>
+                <h4 class="fw-bold text-dark mb-2">Performance, Testing, Portfolio &amp; Interview Prep</h4>
+                <p class="text-muted mb-3">Optimize Core Web Vitals (Lighthouse score 90+), write basic unit tests with
+                  React Testing Library, polish your GitHub profile, prepare your resume, and practice JS/React
+                  interview questions.</p>
+
+                <div class="learn-box mb-3">
+                  <strong class="text-primary d-block mb-1">💡 What to Focus On:</strong>
+                  <span class="small text-muted">Having 2 polished, working projects with live Vercel/Netlify URLs and
+                    clean GitHub code. Study <a href="react-interview.html" class="fw-bold text-primary">React Q&amp;As</a> and <a href="javascript-interview.html" class="fw-bold text-primary">JS Q&amp;As</a>.</span>
+                </div>
+
+                <div class="apply-box">
+                  <strong class="text-danger d-block mb-1">⚠️ Common Trap to Avoid:</strong>
+                  <span class="small text-muted">Applying to 500 jobs with a generic resume and broken demo links. Focus
+                    on targeted applications and referrals.</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- High-Impact Projects Showcase Section -->
+  <section id="projects" class="py-5 bg-white border-top">
+    <div class="container py-3">
+      <div class="row mb-5">
+        <div class="col-lg-8 mx-auto text-center">
+          <span class="bubble-pill bubble-success mb-3">Portfolio Builder</span>
+          <h2 class="display-6 fw-extrabold text-dark mb-3">🚀 High-Impact Projects That Make an Impact</h2>
+          <p class="lead text-muted">Build these 4 production-grade real-world projects to showcase actual engineering skills, wow recruiters, and land top frontend developer roles.</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- Project 1 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="bubbly-card h-100 p-4 d-flex flex-column justify-content-between">
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="fs-1">🛍️</span>
+                <span class="bubble-pill bubble-primary">React + Redux</span>
+              </div>
+              <h4 class="fw-bold text-dark mb-2">E-Commerce Store &amp; Cart</h4>
+              <p class="text-muted small mb-3">Full dynamic store with live search, category filtering, cart management, persistent storage, and checkout flow.</p>
+              <ul class="list-unstyled text-muted small mb-4">
+                <li class="mb-1">⚡ Dynamic Product Filtering</li>
+                <li class="mb-1">🛒 Redux Toolkit Cart State</li>
+                <li class="mb-1">💾 LocalStorage Persistence</li>
+              </ul>
+            </div>
+            <div class="pt-3 border-top">
+              <span class="badge bg-light text-primary fw-bold p-2 w-100 text-center rounded-3">Difficulty: Intermediate</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="bubbly-card h-100 p-4 d-flex flex-column justify-content-between">
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="fs-1">📊</span>
+                <span class="bubble-pill bubble-purple">React + Chart.js</span>
+              </div>
+              <h4 class="fw-bold text-dark mb-2">Real-Time SaaS Dashboard</h4>
+              <p class="text-muted small mb-3">Interactive SaaS metrics dashboard featuring data visualization charts, dark/light theme toggle, and live API feeds.</p>
+              <ul class="list-unstyled text-muted small mb-4">
+                <li class="mb-1">📈 Dynamic Chart Rendering</li>
+                <li class="mb-1">🎨 Custom Theme System</li>
+                <li class="mb-1">🌐 Async REST API Integration</li>
+              </ul>
+            </div>
+            <div class="pt-3 border-top">
+              <span class="badge bg-light text-purple fw-bold p-2 w-100 text-center rounded-3">Difficulty: Advanced</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="bubbly-card h-100 p-4 d-flex flex-column justify-content-between">
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="fs-1">⚡</span>
+                <span class="bubble-pill bubble-sky">Next.js + TypeScript</span>
+              </div>
+              <h4 class="fw-bold text-dark mb-2">Full-Stack Blog &amp; CMS</h4>
+              <p class="text-muted small mb-3">SEO-optimized Next.js App Router blog with server-side rendering, markdown parser, and fast search indexing.</p>
+              <ul class="list-unstyled text-muted small mb-4">
+                <li class="mb-1">🚀 Next.js App Router &amp; SSR</li>
+                <li class="mb-1">📝 Markdown &amp; Syntax Highlight</li>
+                <li class="mb-1">🔍 Fast Client-side Search</li>
+              </ul>
+            </div>
+            <div class="pt-3 border-top">
+              <span class="badge bg-light text-info fw-bold p-2 w-100 text-center rounded-3">Difficulty: Advanced</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="bubbly-card h-100 p-4 d-flex flex-column justify-content-between">
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="fs-1">🎯</span>
+                <span class="bubble-pill bubble-success">Vanilla JS + Canvas</span>
+              </div>
+              <h4 class="fw-bold text-dark mb-2">Interactive Quiz &amp; Task Engine</h4>
+              <p class="text-muted small mb-3">Rich interactive web app with timed quizzes, drag-and-drop elements, and instant visual score breakdown.</p>
+              <ul class="list-unstyled text-muted small mb-4">
+                <li class="mb-1">⏱️ Timed Session Engine</li>
+                <li class="mb-1">🎯 Drag &amp; Drop Interactivity</li>
+                <li class="mb-1">🏅 Certificate Generator</li>
+              </ul>
+            </div>
+            <div class="pt-3 border-top">
+              <span class="badge bg-light text-success fw-bold p-2 w-100 text-center rounded-3">Difficulty: Beginner-Friendly</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Footer -->
+  <footer class="py-4 border-top bg-white">
+    <div class="container text-center">
+      <p class="text-muted mb-2">Realistic 2-Year Frontend Developer Roadmap &amp; Journey Documentation.</p>
+      <div class="d-flex justify-content-center flex-wrap gap-3 text-muted fw-semibold">
+        <a href="index.html" class="text-muted text-decoration-none">Home Roadmap</a> &bull;
+        <a href="javascript-notes.html" class="text-muted text-decoration-none">JS Notes</a> &bull;
+        <a href="react-notes.html" class="text-muted text-decoration-none">React Notes</a> &bull;
+        <a href="react-programs.html" class="text-muted text-decoration-none">React Programs</a> &bull;
+        <a href="react-syllabus.html" class="text-muted text-decoration-none">Syllabus</a> &bull;
+        <a href="react-interview.html" class="text-muted text-decoration-none">React Guide</a> &bull;
+        <a href="javascript-interview.html" class="text-muted text-decoration-none">JS Guide</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- App JS -->
+  <script src="app.js"></script>
+</body>
+
+</html>
