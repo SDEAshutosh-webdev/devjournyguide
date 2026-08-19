@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Ultimate DSA &amp; JavaScript Master Handbook | DevJourney</title>
+  <meta name="description" content="57 Concepts and Algorithms DSA &amp; JavaScript Master Handbook guide.">
+  
+  <!-- Google Fonts & Bootstrap 5 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Marked.js for Markdown parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <style>
+    .markdown-body {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #1e293b;
+    }
+    .markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4 {
+      font-weight: 800;
+      color: #0f172a;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      scroll-margin-top: 80px;
+    }
+    .markdown-body h2 {
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 0.5rem;
+    }
+    .markdown-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      background: #ffffff;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+      border: 2px solid #e2e8f0;
+    }
+    .markdown-body th, .markdown-body td {
+      padding: 0.85rem 1rem;
+      border: 1px solid #e2e8f0;
+    }
+    .markdown-body th {
+      background-color: #f1f5f9;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .markdown-body code {
+      font-family: 'Fira Code', monospace;
+      background-color: #f1f5f9;
+      color: #2563eb;
+      padding: 0.2rem 0.4rem;
+      border-radius: 0.375rem;
+      font-size: 0.9em;
+    }
+    .markdown-body pre {
+      background-color: #0f172a;
+      color: #f8fafc;
+      padding: 1.25rem;
+      border-radius: 1rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      border: 2px solid #1e293b;
+    }
+    .markdown-body pre code {
+      background-color: transparent;
+      color: inherit;
+      padding: 0;
+      border: none;
+    }
+    .markdown-body blockquote {
+      background-color: #e0f2fe;
+      border-left: 5px solid #0284c7;
+      padding: 1rem 1.25rem;
+      border-radius: 0 1rem 1rem 0;
+      margin: 1.5rem 0;
+      color: #0369a1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Base64 Raw text script data container -->
+  <script id="raw-data-base64" type="text/plain">IyBUaGUgVWx0aW1hdGUgRFNBICYgSmF2YVNjcmlwdCBNYXN0ZXIgSGFuZGJvb2sg8J+agAoKV2VsY29tZSB0byB5b3VyIHVsdGltYXRlIHByZXBhcmF0aW9uIGd1aWRlISBUaGlzIGRvY3VtZW50IGZ1bmN0aW9ucyBhcyBhIHJvYWRtYXAgYW5kIHF1aWNrIHJlZmVyZW5jZSBmb3IgdGhlICoqNTcgY29uY2VwdHMgYW5kIGFsZ29yaXRobXMqKiBpbXBsZW1lbnRlZCBpbiBbcHJhY3QuanNdCgpVc2UgdGhpcyBjaGVja2xpc3QgdG8gdHJhY2sgeW91ciBwcm9ncmVzcy4gWW91IGNhbiB0aWNrIG9mZiBgWyBdYCB0byBgW3hdYCBhcyB5b3UgbWFzdGVyIGVhY2ggY29uY2VwdCBhbmQgc29sdmUgaXRzIGNvcnJlc3BvbmRpbmcgcHJhY3RpY2UgY2hhbGxlbmdlIQoKLS0tCgojIyDwn5OaIFRhYmxlIG9mIENvbnRlbnRzCgojIyMgMS4gSmF2YVNjcmlwdCBGdW5kYW1lbnRhbHMgKFNlY3Rpb25zIDEgLSA4KQotIFsgXSAqKlNlY3Rpb24gMTogVmFyaWFibGVzKiog4oCUIGBsZXRgIHZzLiBgY29uc3RgIHNjb3BpbmcgcnVsZXMuCi0gWyBdICoqU2VjdGlvbiAyOiBEYXRhIFR5cGVzKiog4oCUIE51bWJlcnMsIFN0cmluZ3MsIEJvb2xlYW5zLCBOdWxsLCBhbmQgVW5kZWZpbmVkLgotIFsgXSAqKlNlY3Rpb24gMzogT3BlcmF0b3JzKiog4oCUIE1hdGgsIENvbXBhcmlzb25zIChgPT09YCksIExvZ2ljLCBhbmQgTW9kdWxvIChgJWApLgotIFsgXSAqKlNlY3Rpb24gNDogQ29uZGl0aW9uYWxzKiog4oCUIGBpZmAsIGBlbHNlIGlmYCwgYW5kIGBlbHNlYCBjb250cm9sIGZsb3cuCi0gWyBdICoqU2VjdGlvbiA1OiBMb29wcyoqIOKAlCBJdGVyYXRpbmcgd2l0aCBgZm9yYCBhbmQgYHdoaWxlYCBsb29wcy4KLSBbIF0gKipTZWN0aW9uIDY6IEFycmF5cyoqIOKAlCBMaXN0cywgaW5kZXhpbmcsIGAubGVuZ3RoYCwgYC5wdXNoKClgLCBgLnBvcCgpYCwgYC5zaGlmdCgpYCwgYW5kIGAudW5zaGlmdCgpYC4KLSBbIF0gKipTZWN0aW9uIDc6IE9iamVjdHMqKiDigJQgS2V5LXZhbHVlIHN0b3JhZ2UgKHRoZSBmb3VuZGF0aW9uIG9mIEhhc2ggTWFwcyBpbiBKUykuCi0gWyBdICoqU2VjdGlvbiA4OiBGdW5jdGlvbnMqKiDigJQgQ29kZSByZXVzZSwgcmV0dXJuIHN0YXRlbWVudHMsIGFuZCBBcnJvdyBmdW5jdGlvbnMuCgotLS0KCiMjIyAyLiBDb3JlIERhdGEgU3RydWN0dXJlcyAmIEJhc2ljIEFsZ29yaXRobXMgKFNlY3Rpb25zIDkgLSAxNykKCnwgU2VjIHwgVG9waWMgfCBUaW1lIENvbXBsZXhpdHkgfCBTcGFjZSBDb21wbGV4aXR5IHwgQ29yZSBDb25jZXB0IC8gUHJhY3RpY2UgQ2hhbGxlbmdlIHwKfCA6LS0tIHwgOi0tLSB8IDotLS0gfCA6LS0tIHwgOi0tLSB8CnwgKio5KiogfCAqKkFycmF5cyAmIEJpZyBPKiogfCAkTyhOKSQgc2VhcmNoLCAkTygxKSQgYWNjZXNzIHwgJE8oMSkkIHwgRmluZCB0aGUgbGFyZ2VzdCBhbmQgc21hbGxlc3QgZWxlbWVudCBpbiBhbiBhcnJheS4gfAp8ICoqMTAqKiB8ICoqU3RyaW5ncyAmIFR3by1Qb2ludGVycyoqIHwgJE8oTikkIHRyYXZlcnNhbCB8ICRPKDEpJCB8IFBhbGluZHJvbWUgY2hlY2tzIGFuZCBUd28gU3VtIG9uIHNvcnRlZCBhcnJheXMuIHwKfCAqKjExKiogfCAqKkxpbmtlZCBMaXN0cyoqIHwgJE8oTikkIHRyYXZlcnNhbCB8ICRPKDEpJCB8IE5vZGVzIGNvbm5lY3RlZCBieSBwb2ludGVycy4gQ291bnQgbGlzdCBsZW5ndGguIHwKfCAqKjEyKiogfCAqKlN0YWNrcyAmIFF1ZXVlcyoqIHwgJE8oMSkkIG9wZXJhdGlvbnMgfCAkTyhOKSQgfCBMSUZPIChTdGFjaykgdnMgRklGTyAoUXVldWUpLiBQYXJlbnRoZXNlcyBtYXRjaGluZy4gfAp8ICoqMTMqKiB8ICoqUmVjdXJzaW9uKiogfCAkTyhOKSQgfCAkTyhOKSQgcmVjdXJzaW9uIHN0YWNrIHwgRnVuY3Rpb25zIGNhbGxpbmcgdGhlbXNlbHZlcy4gRmlib25hY2NpICYgRmFjdG9yaWFscy4gfAp8ICoqMTQqKiB8ICoqVHJlZXMgJiBCU1QqKiB8ICRPKFxsb2cgTikkIGF2ZXJhZ2Ugc2VhcmNoIHwgJE8oSCkkIHRyZWUgaGVpZ2h0IHwgTGVmdCBpcyBzbWFsbGVyLCByaWdodCBpcyBsYXJnZXIuIENvdW50IHRyZWUgbm9kZXMuIHwKfCAqKjE1KiogfCAqKkdyYXBocyoqIHwgJE8oViArIEUpJCB8ICRPKFYgKyBFKSQgfCBOb2RlLWVkZ2UgY29ubmVjdGlvbnMuIERGUyB0cmF2ZXJzYWwgYW5kIEJGUyBxdWV1ZS4gfAp8ICoqMTYqKiB8ICoqU2VhcmNoaW5nICYgU29ydGluZyoqIHwgJE8oXGxvZyBOKSQgQmluYXJ5IFNlYXJjaCB8ICRPKDEpJCB8IEJpbmFyeSBTZWFyY2ggdnMgQnViYmxlIFNvcnQuIHwKfCAqKjE3KiogfCAqKkR5bmFtaWMgUHJvZ3JhbW1pbmcqKiB8ICRPKE4pJCB3aXRoIG1lbW8gfCAkTyhOKSQgbWVtbyBjYWNoZSB8IFJlY3Vyc2lvbiArIE1lbW9pemF0aW9uLiBDbGltYmluZyBzdGFpcnMuIHwKCi0tLQoKIyMjIDMuIEFkdmFuY2VkIEludGVydmlldyBEYXRhIFN0cnVjdHVyZXMgKFNlY3Rpb25zIDE4IC0gMjQpCgp8IFNlYyB8IFRvcGljIHwgVGltZSBDb21wbGV4aXR5IHwgU3BhY2UgQ29tcGxleGl0eSB8IENvcmUgQ29uY2VwdCAvIFByYWN0aWNlIENoYWxsZW5nZSB8CnwgOi0tLSB8IDotLS0gfCA6LS0tIHwgOi0tLSB8IDotLS0gfAp8ICoqMTgqKiB8ICoqSGFzaCBNYXBzICYgU2V0cyoqIHwgJE8oMSkkIGF2ZXJhZ2UgbG9va3VwIHwgJE8oTikkIHwgTWFwIChrZXktdmFsdWUpIGFuZCBTZXQgKHVuaXF1ZSkuIEludGVyc2VjdGlvbiBvZiBhcnJheXMuIHwKfCAqKjE5KiogfCAqKkhlYXBzICYgUHJpb3JpdHkgUXVldWVzKiogfCAkTyhcbG9nIE4pJCBpbnNlcnQvZXh0cmFjdCB8ICRPKE4pJCB8IE1pbi1oZWFwICYgTWF4LWhlYXAuIEZpbmQgJEskLXRoIGxhcmdlc3QgZWxlbWVudC4gfAp8ICoqMjAqKiB8ICoqQml0IE1hbmlwdWxhdGlvbioqIHwgJE8oMSkkIHwgJE8oMSkkIHwgVXNpbmcgYml0d2lzZSBvcGVyYXRvcnMuIEZpbmQgdGhlIFNpbmdsZSBOdW1iZXIgdXNpbmcgWE9SLiB8CnwgKioyMSoqIHwgKipHcmVlZHkgQWxnb3JpdGhtcyoqIHwgJE8oTiBcbG9nIE4pJCBzb3J0aW5nIHwgJE8oTikkIHwgTG9jYWxseSBvcHRpbWFsIGNob2ljZXMuIE1lcmdlIG92ZXJsYXBwaW5nIGludGVydmFscy4gfAp8ICoqMjIqKiB8ICoqQmFja3RyYWNraW5nKiogfCAkTygyXk4pJCBvciAkTyhOISkkIHwgJE8oTikkIHJlY3Vyc2lvbiBkZXB0aCB8IEV4aGF1c3RpdmUgc2VhcmNoIG9uIHN0YXRlIHNwYWNlcy4gR2VuZXJhdGUgc3Vic2V0cy4gfAp8ICoqMjMqKiB8ICoqVHJpZXMgKFByZWZpeCBUcmVlcykqKiB8ICRPKEwpJCBsZW5ndGggb2Ygd29yZCB8ICRPKEFMUEhBQkVUIFx0aW1lcyBOKSQgfCBBdXRvLWNvbXBsZXRlIHRyZWVzLiBJbXBsZW1lbnQgYHN0YXJ0c1dpdGgocHJlZml4KWAuIHwKfCAqKjI0KiogfCAqKkRpamtzdHJhJ3MgQWxnb3JpdGhtKiogfCAkTygoViArIEUpIFxsb2cgVikkIHwgJE8oVikkIHwgU2luZ2xlLXNvdXJjZSBzaG9ydGVzdCBwYXRoIG9uIHdlaWdodGVkIGdyYXBocy4gfAoKLS0tCgojIyMgNC4gRWxpdGUgTUFBTkcgUGF0dGVybnMgKFNlY3Rpb25zIDI1IC0gMzIpCgp8IFNlYyB8IFRvcGljIHwgVGltZSBDb21wbGV4aXR5IHwgU3BhY2UgQ29tcGxleGl0eSB8IENvcmUgQ29uY2VwdCAvIFByYWN0aWNlIENoYWxsZW5nZSB8CnwgOi0tLSB8IDotLS0gfCA6LS0tIHwgOi0tLSB8IDotLS0gfAp8ICoqMjUqKiB8ICoqU2xpZGluZyBXaW5kb3cqKiB8ICRPKE4pJCB8ICRPKEspJCB3aW5kb3cgc2l6ZSB8IEF2b2lkIG5lc3RlZCBsb29wcyBmb3Igc3ViYXJyYXlzLiBMb25nZXN0IHVuaXF1ZSBzdWJzdHJpbmcuIHwKfCAqKjI2KiogfCAqKk1vbm90b25pYyBTdGFjayoqIHwgJE8oTikkIHwgJE8oTikkIHwgU3RhY2sga2VwdCBpbiBzb3J0ZWQgb3JkZXIuIERhaWx5IHRlbXBlcmF0dXJlcyBwcm9ibGVtLiB8CnwgKioyNyoqIHwgKipVbmlvbi1GaW5kIChEU1UpKiogfCAkTyhcYWxwaGEoTikpIFxhcHByb3ggTygxKSQgfCAkTyhOKSQgfCBHcm91cGluZyBzZXRzIGFuZCBjeWNsZSBkZXRlY3Rpb24uIE51bWJlciBvZiBQcm92aW5jZXMuIHwKfCAqKjI4KiogfCAqKlNlZ21lbnQgVHJlZSoqIHwgJE8oXGxvZyBOKSQgcXVlcmllcy91cGRhdGVzIHwgJE8oTikkIHwgUmFuZ2UgcXVlcmllcyBhbmQgbXV0YWJsZSBwb2ludCB1cGRhdGVzLiB8CnwgKioyOSoqIHwgKipUb3BvbG9naWNhbCBTb3J0KiogfCAkTyhWICsgRSkkIHwgJE8oViArIEUpJCB8IEthaG4ncyBxdWV1ZSBhbGdvcml0aG0gZm9yIGRlcGVuZGVuY3kgc2NoZWR1bGluZy4gfAp8ICoqMzAqKiB8ICoqRmxveWQtV2Fyc2hhbGwqKiB8ICRPKFZeMykkIHwgJE8oVl4yKSQgfCBBbGwtcGFpcnMgc2hvcnRlc3QgcGF0aCBkaXN0YW5jZSBtYXRyaXguIHwKfCAqKjMxKiogfCAqKjJEIER5bmFtaWMgUHJvZ3JhbW1pbmcqKiB8ICRPKE0gXHRpbWVzIE4pJCB8ICRPKE0gXHRpbWVzIE4pJCB8IEdyaWQtc3RhdGUgdHJhbnNpdGlvbnMuIExvbmdlc3QgQ29tbW9uIFN1YnNlcXVlbmNlLiB8CnwgKiozMioqIHwgKipCaW5hcnkgU2VhcmNoIG9uIEFucyoqIHwgJE8oTiBcbG9nKE1BWFxfQU5TKSkkIHwgJE8oMSkkIHwgU2VhcmNoaW5nIGluIG91dHB1dCBzcGFjZXMuIEtva28gRWF0aW5nIEJhbmFuYXMuIHwKCi0tLQoKIyMjIDUuIE1hc3RlciBIaXJpbmcgQm9zcyBMZXZlbHMgJiBDUyBGdW5kYW1lbnRhbHMgKFNlY3Rpb25zIDMzIC0gNDgpCgp8IFNlYyB8IFRvcGljIHwgVGltZSBDb21wbGV4aXR5IHwgU3BhY2UgQ29tcGxleGl0eSB8IEtleSBDb3JlIElkZWEgLyBBcHBsaWNhdGlvbiB8CnwgOi0tLSB8IDotLS0gfCA6LS0tIHwgOi0tLSB8IDotLS0gfAp8ICoqMzMqKiB8ICoqTFJVIENhY2hlKiogfCAkTygxKSQgZ2V0L3B1dCB8ICRPKENBUEFDSVRZKSQgfCBNYXAgKyBEb3VibHkgTGlua2VkIExpc3Qgbm9kZSByZWZlcmVuY2VzLiB8CnwgKiozNCoqIHwgKipLTVAgQWxnb3JpdGhtKiogfCAkTyhOICsgTSkkIHwgJE8oTSkkIHwgUGF0dGVybiBtYXRjaGluZyB1c2luZyB0aGUgTG9uZ2VzdCBQcmVmaXgtU3VmZml4IChMUFMpIHRhYmxlLiB8CnwgKiozNSoqIHwgKipUYXJqYW4ncyBCcmlkZ2VzKiogfCAkTyhWICsgRSkkIHwgJE8oVikkIHwgQ3JpdGljYWwgY29ubmVjdGlvbnMgaW4gZ3JhcGhzIHVzaW5nIGRpc2NvdmVyeSAmIGxvdy1saW5rIHRpbWVzLiB8CnwgKiozNioqIHwgKipNb25vdG9uaWMgUXVldWUqKiB8ICRPKE4pJCB8ICRPKEspJCB8IFNsaWRpbmcgd2luZG93IG1heGltdW0gdXNpbmcgYSBkb3VibGUtZW5kZWQgcXVldWUgKERlcXVlKS4gfAp8ICoqMzcqKiB8ICoqRmVud2ljayBUcmVlIChCSVQpKiogfCAkTyhcbG9nIE4pJCB8ICRPKE4pJCB8IFNwYWNlLWVmZmljaWVudCByYW5nZSBzdW0gcXVlcmllcyB1c2luZyBMU0IgYml0IG1hbmlwdWxhdGlvbi4gfAp8ICoqMzgqKiB8ICoqQml0bWFzayBEUCoqIHwgJE8oMl5OIFx0aW1lcyBOXjIpJCB8ICRPKDJeTiBcdGltZXMgTikkIHwgU3Vic2V0IG9wdGltaXphdGlvbi4gU29sdmluZyBUcmF2ZWxpbmcgU2FsZXNtYW4gUHJvYmxlbSAoVFNQKS4gfAp8ICoqMzkqKiB8ICoqQVwqIFNlYXJjaCoqIHwgJE8oRSBcbG9nIFYpJCB8ICRPKFYpJCB8IEhldXJpc3RpYy1ndWlkZWQgcGF0aGZpbmRpbmcgKCRmID0gZyArIGgkKS4gfAp8ICoqNDAqKiB8ICoqS2FkYW5lJ3MgQWxnb3JpdGhtKiogfCAkTyhOKSQgfCAkTygxKSQgfCBNYXhpbXVtIGNvbnRpZ3VvdXMgc3ViYXJyYXkgc3VtIGluIGEgc2luZ2xlIHBhc3MuIHwKfCAqKjQxKiogfCAqKkZsb3lkJ3MgQ3ljbGUgRmluZGVyKiogfCAkTyhOKSQgfCAkTygxKSQgfCBUb3J0b2lzZSAmIEhhcmUgcG9pbnRlcnMgbW92aW5nIGF0IGRpZmZlcmVudCBzcGVlZHMuIHwKfCAqKjQyKiogfCAqKkJveWVyLU1vb3JlIFZvdGUqKiB8ICRPKE4pJCB8ICRPKDEpJCB8IE1ham9yaXR5IGVsZW1lbnRzICgkPiBOLzIkIGZyZXF1ZW5jeSkgYnkgY2FuY2VsbGF0aW9uLiB8CnwgKio0MyoqIHwgKipRdWljayBTZWxlY3QqKiB8ICRPKE4pJCBhdmVyYWdlIHwgJE8oMSkkIHwgUGl2b3QgcGFydGl0aW9uaW5nIGZvciAkSyQtdGggc21hbGxlc3QvbGFyZ2VzdCBlbGVtZW50LiB8CnwgKio0NCoqIHwgKipLcnVza2FsJ3MgTVNUKiogfCAkTyhFIFxsb2cgRSkkIHwgJE8oVikkIHwgR3JlZWR5IE1TVCBidWlsZGVyIHNvcnRpbmcgZWRnZXMgYW5kIGNoZWNraW5nIGN5Y2xlcyB3aXRoIERTVS4gfAp8ICoqNDUqKiB8ICoqQmVsbG1hbi1Gb3JkKiogfCAkTyhWIFx0aW1lcyBFKSQgfCAkTyhWKSQgfCBTaG9ydGVzdCBwYXRoIHN1cHBvcnRpbmcgbmVnYXRpdmUgZWRnZSB3ZWlnaHRzIGFuZCBjeWNsZSBjaGVja3MuIHwKfCAqKjQ2KiogfCAqKlByaW0ncyBNU1QqKiB8ICRPKEUgXGxvZyBWKSQgfCAkTyhWKSQgfCBWZXJ0ZXgtYmFzZWQgZ3JlZWR5IE1TVCBidWlsZGVyLiB8CnwgKio0NyoqIHwgKipNb3JyaXMgVHJhdmVyc2FsKiogfCAkTyhOKSQgfCAkTygxKSQgfCBJbi1vcmRlciB0cmVlIHRyYXZlcnNhbCB3aXRoIHplcm8gc3RhY2sgc3BhY2UgdXNpbmcgdGhyZWFkcy4gfAp8ICoqNDgqKiB8ICoqSGllcmhvbHplcidzIEFsZ28qKiB8ICRPKFYgKyBFKSQgfCAkTyhWICsgRSkkIHwgUG9zdC1vcmRlciBERlMgZ3JhcGggdHJhdmVyc2FsIGZvciBFdWxlcmlhbiBQYXRocy4gfAoKLS0tCgojIyMgNi4gU3RhbmRhcmQgU29ydGluZyAmIE51bWJlciBUaGVvcnkgQWxnb3JpdGhtcyAoU2VjdGlvbnMgNDkgLSA1NykKCnwgU2VjIHwgVG9waWMgfCBUaW1lIENvbXBsZXhpdHkgfCBTcGFjZSBDb21wbGV4aXR5IHwgS2V5IENvcmUgSWRlYSAvIEFwcGxpY2F0aW9uIHwKfCA6LS0tIHwgOi0tLSB8IDotLS0gfCA6LS0tIHwgOi0tLSB8CnwgKio0OSoqIHwgKipNZXJnZSAmIFF1aWNrIFNvcnQqKiB8ICRPKE4gXGxvZyBOKSQgfCAkTyhOKSQgLyAkTyhcbG9nIE4pJCB8IERpdmlkZS1hbmQtY29ucXVlciBzb3J0aW5nLiB8CnwgKio1MCoqIHwgKipIZWFwIFNvcnQqKiB8ICRPKE4gXGxvZyBOKSQgfCAkTygxKSQgfCBJbi1wbGFjZSBzb3J0aW5nIHV0aWxpemluZyBNYXgtSGVhcCBzdHJ1Y3R1cmUuIHwKfCAqKjUxKiogfCAqKkNvdW50aW5nICYgUmFkaXggU29ydCoqfCAkTyhOICsgSykkIHwgJE8oTiArIEspJCB8IExpbmVhci10aW1lIG5vbi1jb21wYXJpc29uIHNvcnRpbmcgZm9yIHBvc2l0aXZlIGludGVnZXJzLiB8CnwgKio1MioqIHwgKipLb3NhcmFqdSdzIFNDQyoqIHwgJE8oViArIEUpJCB8ICRPKFYgKyBFKSQgfCBGaW5kIGRpcmVjdGVkIGdyYXBoIGNvbXBvbmVudHMgdXNpbmcgZ3JhcGggdHJhbnNwb3NpdGlvbi4gfAp8ICoqNTMqKiB8ICoqQmlwYXJ0aXRlIENoZWNrKiogfCAkTyhWICsgRSkkIHwgJE8oVikkIHwgQ29sb3IgZ3JhcGggdmVydGljZXMgd2l0aCAyIGNvbG9ycy4gQWRqYWNlbnQgY2hlY2suIHwKfCAqKjU0KiogfCAqKlJhYmluLUthcnAgU2VhcmNoKiogfCAkTyhOICsgTSkkIGF2ZXJhZ2UgfCAkTygxKSQgfCBIYXNoaW5nIHN0cmluZyBzZWFyY2ggbWF0Y2hpbmcgdXNpbmcgYSByb2xsaW5nIG1vZHVsYXIgaGFzaC4gfAp8ICoqNTUqKiB8ICoqTWFuYWNoZXIncyBBbGdvKiogfCAkTyhOKSQgfCAkTyhOKSQgfCBMaW5lYXIgdGltZSBzZWFyY2ggZm9yIHRoZSBsb25nZXN0IHBhbGluZHJvbWljIHN1YnN0cmluZy4gfAp8ICoqNTYqKiB8ICoqU2lldmUgb2YgRXJhdG9zdGhlbmVzKip8ICRPKE4gXGxvZyBcbG9nIE4pJCB8ICRPKE4pJCB8IEdlbmVyYXRlIGFsbCBwcmltZSBudW1iZXJzIHVwIHRvICROJC4gfAp8ICoqNTcqKiB8ICoqR0NEICYgRmFzdCBQb3dlcioqIHwgJE8oXGxvZyBOKSQgfCAkTygxKSQgfCBFdWNsaWRlYW4gR3JlYXRlc3QgQ29tbW9uIERpdmlzb3IgJiBGYXN0IEV4cG9uZW50aWF0aW9uLiB8CgotLS0KCiMjIPCfj4YgTW9zdCBBc2tlZCBNQUFORyBMZWV0Q29kZSBQcm9ibGVtcyBieSBQYXR0ZXJuCgpNYXN0ZXJpbmcgdGhlIHNlY3Rpb25zIGluIGBwcmFjdC5qc2AgZXF1aXBzIHlvdSB3aXRoIHRoZSBleGFjdCB0b29scyB0byBzb2x2ZSB0aGVzZSBoaWdobHkgZnJlcXVlbnQgaW50ZXJ2aWV3IHByb2JsZW1zOgoKIyMjIDEuIFR3byBQb2ludGVycyAmIFNsaWRpbmcgV2luZG93Ci0gWyBdICoqVHdvIFN1bSoqIChFYXN5KSDigJQgKlVzZSBUd28gUG9pbnRlcnMgb24gc29ydGVkIGFycmF5IChTZWN0aW9uIDEwKS4qCi0gWyBdICoqM1N1bSoqIChNZWRpdW0pIOKAlCAqRXh0ZW5kIHR3by1wb2ludGVyIGxvZ2ljIGFmdGVyIHNvcnRpbmcuKgotIFsgXSAqKkxvbmdlc3QgU3Vic3RyaW5nIFdpdGhvdXQgUmVwZWF0aW5nIENoYXJhY3RlcnMqKiAoTWVkaXVtKSDigJQgKlVzZSBkeW5hbWljIHNsaWRpbmcgd2luZG93ICsgaGFzaCBtYXAgKFNlY3Rpb24gMjUpLioKLSBbIF0gKipDb250YWluZXIgV2l0aCBNb3N0IFdhdGVyKiogKE1lZGl1bSkg4oCUICpTcXVlZXplIHBvaW50ZXJzIGZyb20gbGVmdCBhbmQgcmlnaHQuKgotIFsgXSAqKlRyYXBwaW5nIFJhaW4gV2F0ZXIqKiAoSGFyZCkg4oCUICpNb25vdG9uaWMgc3RhY2sgb3IgcHJlLWNvbXB1dGVkIGxlZnQvcmlnaHQgbWF4IGFycmF5cy4qCgojIyMgMi4gU3RhY2tzICYgUXVldWVzCi0gWyBdICoqVmFsaWQgUGFyZW50aGVzZXMqKiAoRWFzeSkg4oCUICpVc2Ugc3RhY2sgcHVzaCBhbmQgcG9wIChTZWN0aW9uIDEyKS4qCi0gWyBdICoqRGFpbHkgVGVtcGVyYXR1cmVzKiogKE1lZGl1bSkg4oCUICpVc2UgbW9ub3RvbmljIGRlY3JlYXNpbmcgc3RhY2sgKFNlY3Rpb24gMjYpLioKLSBbIF0gKipTbGlkaW5nIFdpbmRvdyBNYXhpbXVtKiogKEhhcmQpIOKAlCAqVXNlIG1vbm90b25pYyBkb3VibGUtZW5kZWQgcXVldWUgKFNlY3Rpb24gMzYpLioKCiMjIyAzLiBMaW5rZWQgTGlzdHMKLSBbIF0gKipSZXZlcnNlIExpbmtlZCBMaXN0KiogKEVhc3kpIOKAlCAqSW4tcGxhY2UgbWFuaXB1bGF0aW9uIG9mIHBvaW50ZXJzLioKLSBbIF0gKipNZXJnZSBrIFNvcnRlZCBMaXN0cyoqIChIYXJkKSDigJQgKkRpdmlkZSBhbmQgY29ucXVlciwgb3IgdXNlIE1pbi1IZWFwIChTZWN0aW9uIDE5KS4qCgojIyMgNC4gR3JhcGggJiBUcmVlcwotIFsgXSAqKk51bWJlciBvZiBJc2xhbmRzKiogKE1lZGl1bSkg4oCUICpVc2UgREZTL0JGUyB0byB0cmF2ZXJzZSBncmlkIGNvbm5lY3RlZCBjb21wb25lbnRzIChTZWN0aW9uIDE1KS4qCi0gWyBdICoqQ291cnNlIFNjaGVkdWxlKiogKE1lZGl1bSkg4oCUICpUb3BvbG9naWNhbCBTb3J0IEthaG4ncyBBbGdvcml0aG0gLyBDeWNsZSBEZXRlY3Rpb24gKFNlY3Rpb24gMjkpLioKLSBbIF0gKipOdW1iZXIgb2YgUHJvdmluY2VzKiogKE1lZGl1bSkg4oCUICpVc2UgRFNVIC8gVW5pb24tRmluZCAoU2VjdGlvbiAyNykuKgotIFsgXSAqKkJpbmFyeSBUcmVlIE1heGltdW0gUGF0aCBTdW0qKiAoSGFyZCkg4oCUICpQb3N0LW9yZGVyIHJlY3Vyc2lvbi4qCgojIyMgNS4gU29ydGluZyAmIFNlYXJjaGluZwotIFsgXSAqKkJpbmFyeSBTZWFyY2gqKiAoRWFzeSkg4oCUICpEaXZpZGUgYW5kIGNvbnF1ZXIgc2VhcmNoIHNwYWNlIChTZWN0aW9uIDE2KS4qCi0gWyBdICoqU2VhcmNoIGluIFJvdGF0ZWQgU29ydGVkIEFycmF5KiogKE1lZGl1bSkg4oCUICpDdXN0b20gYmluYXJ5IHNlYXJjaC4qCi0gWyBdICoqS29rbyBFYXRpbmcgQmFuYW5hcyoqIChNZWRpdW0pIOKAlCAqQmluYXJ5IFNlYXJjaCBvbiBBbnN3ZXIgKFNlY3Rpb24gMzIpLioKCiMjIyA2LiBEeW5hbWljIFByb2dyYW1taW5nCi0gWyBdICoqQ2xpbWJpbmcgU3RhaXJzKiogKEVhc3kpIOKAlCAqRmlib25hY2NpLWxpa2Ugc3RhdGUgdHJhbnNpdGlvbnMgKFNlY3Rpb24gMTcpLioKLSBbIF0gKipMb25nZXN0IENvbW1vbiBTdWJzZXF1ZW5jZSoqIChNZWRpdW0pIOKAlCAqMkQgRFAgZ3JpZCBtYXRjaGluZyAoU2VjdGlvbiAzMSkuKgotIFsgXSAqKjAvMSBLbmFwc2FjayAvIFBhcnRpdGlvbiBFcXVhbCBTdWJzZXQgU3VtKiogKE1lZGl1bSkg4oCUICoyRCBzdGF0ZSBhcnJheSAoU2VjdGlvbiAzMSkuKgotIFsgXSAqKkVkaXQgRGlzdGFuY2UqKiAoSGFyZCkg4oCUICoyRCBncmlkIGNvbnZlcnNpb24gb3BlcmF0aW9ucy4qCgotLS0KCiMjIPCfjq8gUHJvIHN0dWR5IHRpcHM6CjEuICoqTG9vayBhdCBbcHJhY3QuanNdKGZpbGU6Ly8vYzovVXNlcnMvYXNodXRvc2guY2hpa2hhbGthci9EZXNrdG9wL0NydXNoZXJfUHJvamVjdC9kZXBsb3kvQ3J1c2hlckFwcEZyb250ZW5kL3ByYWN0LmpzKSBpbiB5b3VyIGVkaXRvcioqIHRvIHN0dWR5IHRoZSBpbXBsZW1lbnRhdGlvbiBmb3IgYW55IHNlY3Rpb24uCjIuICoqSW1wbGVtZW50IHRoZSBtYXRjaGluZyBjaGFsbGVuZ2VzKiogaW5zaWRlIGBwcmFjdC5qc2Agd2hlcmUgbWFya2VkIHdpdGggYC8vIFRPRE9gLgozLiAqKlZlcmlmeSBieSBydW5uaW5nIHRoZSBjb2RlKiogKGBub2RlIHByYWN0LmpzYCkgdG8gc2VlIHlvdXIgcmVzdWx0cyBwcmludGVkIHRvIHRoZSBjb25zb2xlIQo=</script>
+
+  <!-- Cool Sleek Non-Repetitive Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-extrabold text-dark d-flex align-items-center gap-2" href="index.html">
+        <span class="bubble-pill bubble-primary shadow-sm">⚡ DevJourney</span>
+        <span class="fs-6 text-muted fw-bold d-none d-sm-inline">Frontend Hub</span>
+      </a>
+      
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link px-3" href="index.html#overview">🏠 Home</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="index.html#roadmap">🗺️ Roadmap</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="index.html#projects">💻 Projects</a></li>
+          
+          <!-- Single Clean Categorized Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle px-3 active fw-bold" href="#" role="button" data-bs-toggle="dropdown">
+              📚 Study Guides &amp; Resources
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg rounded-4 p-3 mt-2" style="min-width: 280px;">
+              <li><h6 class="dropdown-header text-uppercase text-primary fw-extrabold px-2 mb-1" style="font-size: 0.75rem; letter-spacing: 0.05em;">Core Notes &amp; Code</h6></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-2 fw-semibold" href="javascript-notes.html">⚡ JavaScript Notes</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-2 fw-semibold" href="react-notes.html">⚛️ React.js Complete Notes</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-2 fw-semibold" href="react-programs.html">💻 React Programs &amp; Examples</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-2 fw-semibold" href="dsa-practice-code.html">🧠 JS DSA Practice Code</a></li>
+              
+              <li><hr class="dropdown-divider my-2"></li>
+              
+              <li><h6 class="dropdown-header text-uppercase text-purple fw-extrabold px-2 mb-1" style="font-size: 0.75rem; letter-spacing: 0.05em;">Syllabus &amp; Guides</h6></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-2 fw-semibold active" href="dsa-guide.html">🚀 Ultimate DSA Master Handbook</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-2 fw-semibold" href="react-syllabus.html">📅 37-Session Syllabus</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-2 fw-semibold" href="react-interview-questions-notes.html">❓ React Q&amp;A Notes</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-2 fw-semibold" href="react-interview.html">📘 Top 50 React Interview Guide</a></li>
+              <li><a class="dropdown-item rounded-3 py-2 px-2 fw-semibold" href="javascript-interview.html">📙 Top 180 JS Interview Guide</a></li>
+            </ul>
+          </li>
+        </ul>
+        
+        <div class="ms-lg-3 mt-3 mt-lg-0">
+          <a href="index.html#resources" class="btn btn-bubbly-primary btn-sm px-4 py-2 shadow-sm">
+            🚀 All Guides
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="py-5 bg-white border-bottom">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-9 mx-auto text-center">
+          <span class="bubble-pill bubble-success mb-3">57 Algorithm Sections</span>
+          <h1 class="display-5 fw-extrabold text-dark mb-3">The Ultimate DSA &amp; JS Master Handbook</h1>
+          <p class="lead text-muted mb-4">Complete roadmap and complexity reference guide for 57 Data Structures, Algorithms, and MAANG LeetCode patterns.</p>
+          
+          <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 max-w-lg mx-auto">
+            <input type="text" id="resourceSearchInput" class="form-control form-control-bubbly py-3 px-4 shadow-sm" placeholder="Search algorithms, complexities...">
+            <button id="copyBtn" class="btn btn-bubbly-secondary px-4 fw-bold text-nowrap">
+              📋 Copy Markdown
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-11 mx-auto">
+          <div class="bubbly-card p-4 p-md-5">
+            <div id="resource-container" class="markdown-body">
+              <div class="text-center py-5">
+                <div class="spinner-border text-primary" role="status"></div>
+                <p class="mt-2 text-muted fw-semibold">Rendering handbook content...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-4 border-top bg-white">
+    <div class="container text-center">
+      <p class="text-muted mb-2">57-Section DSA &amp; JavaScript Master Guide.</p>
+      <div class="d-flex justify-content-center flex-wrap gap-3 text-muted fw-semibold">
+        <a href="index.html" class="text-muted text-decoration-none">Home Roadmap</a> &bull; 
+        <a href="javascript-notes.html" class="text-muted text-decoration-none">JS Notes</a> &bull; 
+        <a href="react-notes.html" class="text-muted text-decoration-none">React Notes</a> &bull; 
+        <a href="dsa-practice-code.html" class="text-muted text-decoration-none">DSA Code</a> &bull; 
+        <a href="dsa-guide.html" class="text-muted text-decoration-none">DSA Handbook</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Decodes Base64 and renders Markdown -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const base64Data = document.getElementById('raw-data-base64').textContent.trim();
+      const binaryString = atob(base64Data);
+      const bytes = Uint8Array.from(binaryString, c => c.charCodeAt(0));
+      const decodedText = new TextDecoder('utf-8').decode(bytes);
+
+      const container = document.getElementById('resource-container');
+      const searchInput = document.getElementById('resourceSearchInput');
+      const copyBtn = document.getElementById('copyBtn');
+
+      function renderMarkdown(text) {
+        if (typeof marked !== 'undefined') {
+          container.innerHTML = marked.parse(text);
+        } else {
+          container.textContent = text;
+        }
+      }
+
+      renderMarkdown(decodedText);
+
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          const query = e.target.value.toLowerCase().trim();
+          if (!query) {
+            renderMarkdown(decodedText);
+            return;
+          }
+          const lines = decodedText.split('\n');
+          const filtered = lines.filter(line => line.toLowerCase().includes(query));
+          renderMarkdown(filtered.length > 0 ? filtered.join('\n') : '### No matching algorithm topics found.');
+        });
+      }
+
+      if (copyBtn) {
+        copyBtn.addEventListener('click', () => {
+          navigator.clipboard.writeText(decodedText).then(() => {
+            const orig = copyBtn.innerHTML;
+            copyBtn.innerHTML = '✅ Copied!';
+            setTimeout(() => copyBtn.innerHTML = orig, 2000);
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>
