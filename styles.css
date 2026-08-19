@@ -124,7 +124,20 @@ body {
   border-color: #cbd5e1;
 }
 
-/* Filter Pill Controls */
+/* Filter Pill Controls & Responsive Touch Scroll */
+.filter-pills-wrapper {
+  display: inline-flex;
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.filter-pills-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
 .btn-pill-custom {
   background: #ffffff;
   color: var(--text-muted);
@@ -132,6 +145,8 @@ body {
   border-radius: 50rem;
   padding: 0.5rem 1.25rem;
   font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
   transition: all 0.25s ease;
 }
 
@@ -140,6 +155,13 @@ body {
   color: #ffffff;
   border-color: var(--primary-color);
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+@media (max-width: 576px) {
+  .btn-pill-custom {
+    padding: 0.45rem 1rem;
+    font-size: 0.85rem;
+  }
 }
 
 /* Section Box Highlights */
